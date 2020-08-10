@@ -4,17 +4,21 @@ using System.Collections.Generic;
 using System.Net;
 using System.Collections.Specialized;
 using System.Text;
+using System.Linq;
 
 namespace GoogleFormSubmitter
 {
     public class MainClass
     {
         public static async Task Main(string[] args)
-        {
-            
+        {          
             Console.Write("Enter number of answers: ");
-            int n = Convert.ToInt32(Console.ReadLine());
-            for (int i = 0; i < n; i++)
+
+            var n = Convert.ToInt32(Console.ReadLine());
+            var indexes = Enumerable.Range(0, n).ToList();
+            indexes.Shuffle();
+
+            foreach(var i in indexes)
             {
                 Console.WriteLine((i + 1) + ". Sending data...");
 

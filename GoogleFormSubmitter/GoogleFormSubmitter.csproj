@@ -36,6 +36,7 @@
     <Compile Include="GoogleFormsSubmissionService.cs" />
     <Compile Include="AnswerRandomizer.cs" />
     <Compile Include="Seeds.cs" />
+    <Compile Include="Extension.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
 </Project>
