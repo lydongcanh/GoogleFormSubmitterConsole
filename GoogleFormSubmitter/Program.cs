@@ -7,7 +7,7 @@ using System.Text;
 
 namespace GoogleFormSubmitter
 {
-    class MainClass
+    public class MainClass
     {
         public static async Task Main(string[] args)
         {
@@ -18,51 +18,52 @@ namespace GoogleFormSubmitter
             {
                 Console.WriteLine((i + 1) + ". Sending data...");
 
-                var url = "https://docs.google.com/forms/d/e/1FAIpQLSfg0vX1NZh-lliq1dSaoJsdbCUTlF9oD7KsnjjStzmHcmcY0g/formResponse";
+                var url = "https://docs.google.com/forms/d/e/1FAIpQLSfJPxwtkz6SJO13WXG6shkq51CqCrjGvijnFWyq1iV_7vs1jA/formResponse";
                 var service = new GoogleFormsSubmissionService(url);
                 var randomizer = new AnswerRandomizer();
 
                 var keyValue = new Dictionary<string, string>
                 {
-                    { "pageHistory", "0,1,2" }, // values must not have spaces
-                    { "entry.942122049", randomizer.RandomSingleAnswer(Seeds.Universities) }, // 1
-                    { "entry.1591232226", randomizer.RandomSingleAnswer(Seeds.Genders) }, // 2
-                    { "entry.592342948", randomizer.RandomSingleAnswer(Seeds.StudentYears) }, // 3
-                    { "entry.1586518932", "Đúng" }, // 4
+                    { "pageHistory", "0,1,2,3" }, // values must not have spaces
 
-                    // 7
-                    { "entry.290410784", randomizer.RandomSingleAnswer(Seeds.Q7) },
-                    { "entry.1758965307", randomizer.RandomSingleAnswer(Seeds.Q7) },
-                    { "entry.25957341", randomizer.RandomSingleAnswer(Seeds.Q7) },
-                    { "entry.1143952455", randomizer.RandomSingleAnswer(Seeds.Q7) },
-                    { "entry.614017038", randomizer.RandomSingleAnswer(Seeds.Q7) },
-                    { "entry.793063967", randomizer.RandomSingleAnswer(Seeds.Q7) },
-                    { "entry.43530589", randomizer.RandomSingleAnswer(Seeds.Q7) },
-                    { "entry.386930221", randomizer.RandomSingleAnswer(Seeds.Q7) },
-                    { "entry.1323186032", randomizer.RandomSingleAnswer(Seeds.Q7) },
-                    { "entry.530330889", randomizer.RandomSingleAnswer(Seeds.Q7) },
-                    { "entry.1820489267", randomizer.RandomSingleAnswer(Seeds.Q7) },
+                    { "entry.942122049", randomizer.Q1(i) }, // 1
+                    { "entry.1591232226", randomizer.Q2(i) }, // 2
+                    { "entry.592342948", randomizer.Q3(i) }, // 3
+                    { "entry.1586518932", randomizer.Q4(i) }, // 4
+                    { "entry.290410784", randomizer.Q6(i) }, // 6
+                    { "entry.707901832", randomizer.Q8(i) }, // 8
+                    { "entry.1465880545", randomizer.Q9(i) }, // 9
+                    { "entry.435710000", randomizer.Q10(i) }, // 10
 
-                    { "entry.435710000", randomizer.RandomSingleAnswer(Seeds.Q10) }, // 10
+                    // 11
+                    { "entry.1407575000", randomizer.Q11_1(i) },
+                    { "entry.450457108", randomizer.Q11_2(i) },
+                    { "entry.328563900", randomizer.Q11_3(i) },
+                    { "entry.1767421383", randomizer.Q11_4(i) },
 
-                    // 13
-                    { "entry.1024633657", randomizer.RandomSingleAnswer(Seeds.Q13) },
-                    { "entry.1594492916", randomizer.RandomSingleAnswer(Seeds.Q13) },
-                    { "entry.1968152235", randomizer.RandomSingleAnswer(Seeds.Q13) },
-                    { "entry.335777492", randomizer.RandomSingleAnswer(Seeds.Q13) },
-                    { "entry.1756164232", randomizer.RandomSingleAnswer(Seeds.Q13) },
-                    { "entry.1875171372", randomizer.RandomSingleAnswer(Seeds.Q13) },
-                    { "entry.1863010780", randomizer.RandomSingleAnswer(Seeds.Q13) },
-                    { "entry.1692810268", randomizer.RandomSingleAnswer(Seeds.Q13) }
+
+                    // 14
+                    { "entry.1024633657", randomizer.Q14_1(i) },
+                    { "entry.1594492916", randomizer.Q14_2(i) },
+                    { "entry.1968152235", randomizer.Q14_3(i) },
+                    { "entry.335777492", randomizer.Q14_4(i) },
+                    { "entry.1756164232", randomizer.Q14_5(i) },
+                    { "entry.1875171372", randomizer.Q14_6(i) },
+                    { "entry.1863010780", randomizer.Q14_7(i) },
+
+                    // 15
+                    { "entry.1017603238", randomizer.Q15_1(i) },
+                    { "entry.1775366673", randomizer.Q15_2(i) },
+                    { "entry.1479727737", randomizer.Q15_3(i) },
+                    { "entry.1660021787", randomizer.Q15_4(i) },
                 };
 
                 service.SetFieldValues(keyValue);
-                service.SetCheckboxValues("entry.1931486168", randomizer.RandomMultipleAnswers(Seeds.Q5, 2));
-                service.SetCheckboxValues("entry.377350911", randomizer.RandomMultipleAnswers(Seeds.Q6, 2));
-                service.SetCheckboxValues("entry.707901832", randomizer.RandomMultipleAnswers(Seeds.Q8, 2));
-                service.SetCheckboxValues("entry.1465880545", randomizer.RandomMultipleAnswers(Seeds.Q9, 2));
-                service.SetCheckboxValues("entry.597665629", randomizer.RandomMultipleAnswers(Seeds.Q11, 2));
-                service.SetCheckboxValues("entry.1405303139", randomizer.RandomMultipleAnswers(Seeds.Q12, 2));
+                service.SetCheckboxValues("entry.1931486168", randomizer.Q5(i)); // 5
+                service.SetCheckboxValues("entry.377350911", randomizer.Q7(i)); // 7
+
+                service.SetCheckboxValues("entry.597665629", randomizer.Q12(i)); // 12
+                service.SetCheckboxValues("entry.1405303139", randomizer.Q13(i)); // 13
 
                 await service.SubmitAsync();
             }

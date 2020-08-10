@@ -15,13 +15,11 @@ namespace GoogleFormSubmitter
             "Đại học Khoa học Tự nhiên",
             "Đại học Khoa học Xã hội và Nhân văn",
             "Đại học Kinh tế – Luật",
-            "Đại học Kinh tế",
             "Đại học Kiến Trúc",
             "Đại học Luật",
             "Đại học Mở",
             "Đại học Mỹ thuật",
             "Đại học Ngoại thương",
-            "Đại học Ngân hàng",
             "Đại học Nông Lâm",
             "Đại học Quốc tế",
             "Đại học Sài Gòn",
@@ -30,7 +28,6 @@ namespace GoogleFormSubmitter
             "Đại học Sư phạm Thể dục Thể thao",
             "Đại học Sư phạm",
             "Đại học Thể dục Thể thao",
-            "Đại học Tài chính – Marketing",
             "Đại học Tài nguyên – Môi trường",
             "Đại học Tôn Đức Thắng",
             "Đại học Việt Đức",
@@ -47,7 +44,6 @@ namespace GoogleFormSubmitter
             "Đại học Hoa Sen",
             "Đại học Hùng Vương",
             "Đại học Kinh tế – Tài chính",
-            "Đại học Ngoại ngữ – Tin học",
             "Đại học Nguyễn Tất Thành",
             "Đại học RMIT",
             "Đại học Văn Hiến",           
@@ -68,7 +64,7 @@ namespace GoogleFormSubmitter
             "Mục khác",
         };
 
-        public static string[] Q4 = new string[]
+        public static string[] TrueFalse = new string[]
         {
             "Đúng",
             "Không đúng"
@@ -78,42 +74,38 @@ namespace GoogleFormSubmitter
         {
             "Nghe nhạc",
             "Xem phim",
-            "Xem tin tức",
-            "Lướt web",
+            "Lướt web (Facebook, Instagram, website, etc.)",
+            "Cập nhật tin tức",
             "Mục khác"
         };
 
         public static string[] Q6 = new string[]
         {
-            "Facebook",
-            "Instagram",
-            "Twitter",
-            "Youtube",
-            "Mục khác"
+            "1", // "Đồng ý hoàn toàn",
+            "2", // "Đồng ý",
+            "3", // "Trung lập",
+            "4", // "Không đồng ý",
+            "5" // "Hoàn toàn không đồng ý"
         };
 
         public static string[] Q7 = new string[]
         {
-            "Đồng ý hoàn toàn",
-            "Đồng ý",
-            "Trung lập",
-            "Không đồng ý",
-            "Hoàn toàn không đồng ý"
-        };
-
-        public static string[] Q8 = new string[]
-        {
             "Facebook",
             "Instagram",
             "Twitter",
             "Youtube",
-            "Google",
             "Mục khác"
+        };
+
+        public static string[] Q8 = new string[]
+        {
+            "Có, đã từng nghe",
+            "Không, chưa từng nghe tới",
         };
 
         public static string[] Q9 = new string[]
         {
-            "MV K-pop",
+            "Video ca nhạc K-pop",
             "Chương trình thực tế/Gameshow",
             "Phim",
             "Video liên quan đến các nghệ sĩ Hàn Quốc",
@@ -129,37 +121,44 @@ namespace GoogleFormSubmitter
             "Facebook",
             "Instagram",
             "Twitter",
-            "TikTok",
             "Mục khác"
         };
 
-        public static string[] Q11 = new string[]
+        public static string[] ArgeeDisagree = new string[]
         {
-            "Có thể chia sẻ với nhiều nhóm người có cùng sở thích",
-            "Có nhiều nguồn thông tin",
-            "Dễ dàng tiếp xúc và chia sẻ các sản phẩm giải trí xuyên quốc gia",
-            "Công cụ giao tiếp hiệu quả",
-            "Chi phí thấp",
-            "Dễ dàng truy cập, ít tốn thời gian",
-            "Mục khác"
+            "Hoàn toàn đồng ý",
+            "Đồng ý",
+            "Trung lập",
+            "Không đồng ý",
+            "Hoàn toàn không đồng ý"
         };
 
         public static string[] Q12 = new string[]
         {
-            "Nội dung hấp dẫn",
-            "Hiệu ứng bắt mắt",
-            "Phong cách thu hút",
-            "Tài năng của các nghệ sĩ Hàn Quốc",
-            "Mục khác"
+            "Có thể tương tác và kết nối không giới hạn giữa những người có cùng sở thích và giữa người hâm mộ và các nghệ sĩ Hàn Quốc",
+            "Đa dạng các loại hình sản phẩm và hình thức tiếp cận",
+            "Các tính năng phiên dịch tự động",
+            "Chi phí thấp",
+            "Dễ dàng truy cập, ít tốn thời gian",
+            "Mục khác",
         };
 
         public static string[] Q13 = new string[]
+        {
+            "Nội dung hấp dẫn",
+            "Hiệu ứng và kỹ xảo bắt mắt",
+            "Dẫn đầu xu hướng về thời trang, làm đẹp, các điệu nhảy cover, etc",
+            "Tài năng của các nghệ sĩ Hàn Quốc",
+            "Mục khác",
+        };
+
+        public static string[] Q14 = new string[]
         {
             "Cực kỳ quan tâm",
             "Quan tâm",
             "Tương đối quan tâm",
             "Ít quan tâm",
-            "Hoàn toàn không quan tâm"
+            "Hoàn toàn không quan tâm",
         };
     }
 }
